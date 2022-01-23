@@ -182,6 +182,7 @@ class _SignInFormContentState extends State<_SignInFormContent> {
           final state = AuthState.of(context);
 
           return LoadingButton(
+            key: ValueKey('confirm${widget.action}'),
             label: _chooseButtonLabel(),
             isLoading: state is SigningIn || state is SigningUp,
             onTap: _submit,
