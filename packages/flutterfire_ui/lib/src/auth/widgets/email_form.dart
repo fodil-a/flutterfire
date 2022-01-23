@@ -119,6 +119,7 @@ class _SignInFormContentState extends State<_SignInFormContent> {
     final children = [
       if (widget.email == null) ...[
         EmailInput(
+          key: ValueKey('email${widget.action}'),
           focusNode: emailFocusNode,
           controller: emailCtrl,
           onSubmitted: (v) {
@@ -129,6 +130,7 @@ class _SignInFormContentState extends State<_SignInFormContent> {
         spacer,
       ],
       PasswordInput(
+        key: ValueKey('password${widget.action}'),
         focusNode: passwordFocusNode,
         controller: passwordCtrl,
         onSubmit: _submit,
